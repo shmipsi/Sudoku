@@ -1,4 +1,5 @@
 import colored
+import sudoku_validation
 
 # straight line to be printed for a sudoku grid
 line_one = ["+","-","-","-","+","-","-","-","+","-","-","-","+"]
@@ -27,3 +28,12 @@ def print_array(sudoku):
         print(*line_list)
         if line_number==2 or line_number==5 or line_number==8: print(*line_one)
         line_number += 1
+
+def validation_results(sudoku):
+    results = sudoku_validation.validate_sudoku(sudoku)
+    print("Validation Results:")
+    print(f"Format Valid: {results[0]}")
+    print(f"No Negative Values: {results[1]}")
+    print(f"Row Sums Valid: {results[2]}")
+    print(f"Column Sums Valid: {results[3]}")
+    print(f"Box Sums Valid: {results[4]}")

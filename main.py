@@ -31,5 +31,6 @@ b3 = [
 tui.print_array(b2)
 tui.print_array(b3)
 print(type(b2))
-sudoku_validation.validate_sudoku(b2)
+tui.validation_results(b2)
+tui.validation_results(b3)
 
