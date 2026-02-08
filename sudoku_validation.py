@@ -119,3 +119,10 @@ def validate_sudoku(sudoku):
     box_sum = validate_box_sums(sudoku)
 
     return (format_valid, negative_valid, row_sum, column_sum, box_sum)
+
+def validate_all(sudoku):
+    format_valid, negative_valid, row_sum, column_sum, box_sum = validate_sudoku(sudoku)
+    row_unique, col_unique, box_unique = validate_unique_values(sudoku)
+    if all([format_valid, negative_valid, row_sum, column_sum, box_sum, row_unique, col_unique, box_unique]):
+        return 1
+    return 0
